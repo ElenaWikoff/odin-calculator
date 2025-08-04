@@ -2,7 +2,7 @@
 Calculator class.
 */
 
-import { add, sub, mult, div, sqrt, perc, exp, pi, round, inverse, cos, sin, tan } from "operators";
+import { add, sub, mult, div, sqrt, perc, exp, pi, round, inverse, cos, sin, tan } from "./operators.js";
 
 const defaultCalc = {
     value: "0",
