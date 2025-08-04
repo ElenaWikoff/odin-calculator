@@ -38,17 +38,18 @@ export default class Calculator {
 
     // Clear methods
 
-    // 'CE' - Clear current input
-    clear() {
-        this.input = defaultCalc.input;
-    }
-
-    // 'AC' - Reset calculator to default
-    allClear() {
-        this.value = defaultCalc.value;
-        this.input = defaultCalc.input;
-        this.op = defaultCalc.op;
-        this.memory = defaultCalc.memory;
+    // 'CE' or 'AC' - Clear current input on 'CE' or reset calculator on 'AC'
+    clear(type) {
+        if (type === 'ac') {
+            this.value = defaultCalc.value;
+            this.input = defaultCalc.input;
+            this.op = defaultCalc.op;
+            this.memory = defaultCalc.memory;
+        } else if (type === 'ce') {
+            this.input = defaultCalc.input;
+        } else {
+            throw InvalidInputError(`Invalid type: ${type}`);
+        }
     }
 
     // Memory methods
