@@ -1,0 +1,152 @@
+/* calculator.js
+Calculator class.
+*/
+
+import { add, sub, mult, div, sqrt, perc, exp, pi, round, inverse } from "operators";
+
+const defaultCalc = {
+    value: "0",
+    input: "0",
+    op: "+",
+    memory: "0",
+};
+
+export class Calculator {
+    constructor() {
+        this.value = defaultCalc.value;
+        this.input = defaultCalc.input;
+        this.op = defaultCalc.op;
+        this.memory = defaultCalc.memory;
+    }
+
+    // Perform operation on values.
+    #calc(op, x1, x2) {
+        switch (op) {
+            case "+": return add(x1, x2);
+            case "-": return sub(x1, x2);
+            case "*": return mult(x1, x2);
+            case "/": return div(x1, x2);
+            case "^": return exp(x1, x2);
+            default: throw new InvalidInputError(`Invalid operator: ${op}.`);
+        }
+    }
+
+    // Evaluate new value in calculator based on value, input and operator.
+    #eval() {
+        this.value = this.#calc(this.op, Number(this.value), Number(this.input));
+    }
+
+    // Clear methods
+
+    // 'CE' - Clear current input
+    clear() {
+        this.input = defaultCalc.input;
+    }
+
+    // 'AC' - Reset calculator to default
+    allClear() {
+        this.value = defaultCalc.value;
+        this.input = defaultCalc.input;
+        this.op = defaultCalc.op;
+        this.memory = defaultCalc.memory;
+    }
+
+    // Memory methods
+
+    // 'mc' - Clear memory to default: '0'
+    memClear() {
+        this.memory = defaultCalc.memory;
+    }
+
+    // 'mr' - Return value in memory
+    memRecall() {
+        return this.memory;
+    }
+
+    // 'm+' - Add value to value in memory
+    memPlus(value) {
+        this.memory = this.#calc("+", this.memory, value);
+    }
+
+    // 'm-' - Subtract value from value in memory
+    memMinus(value) {
+         this.memory -= this.#calc("-", this.memory, value);
+    }
+
+    // Evalutation methods
+
+    // Set operator
+    #setOp(op) {
+        this.#eval();
+        this.op = op;
+    }
+
+    // '=' - Evaluate
+    equal() {
+        this.#eval();
+    }
+
+    // '+'  - Set operator to '+' (add)
+    add() {
+        this.#setOp("+");
+        
+    }
+
+    // '-'  - Set operator to '-' (subtract)
+    sub() {
+        this.#setOp("-");
+        this.input = "0";
+    }
+
+    // 'x'  - Set operator to '*' (multiply)
+    mult() {
+        this.#setOp("*");
+    }
+
+    // '÷'  - Set operator to '/' (divide)
+    div() {
+        this.#setOp("/");
+    }
+
+    // Set operator to '^' (exponent)
+    exp() {
+        this.#setOp("^");
+    }
+
+    // Input methods
+
+    // Input digit or decimal: '.' or '1,2,3,4,5,6,7,8,9,0'
+    addDigit(digit) {
+        this.input += digit;
+    }
+    
+    // Square root input
+    sqrt() {
+        this.input = sqrt(this.input);
+    }
+
+    // Divide input by 100
+    percent() {
+        this.input = perc(this.input);
+    }
+
+    // Set input to pi
+    pi() {
+        this.input = pi();
+    }
+
+    // Round input to nearest cent
+    r2() {
+        this.input = round(this.input, 2);
+    }
+
+    // Round input to nearest integer
+    r0() {
+        this.input = round(this.input, 0);
+    }
+
+    // Inverse sign of input
+    inverse() {
+        this.input = inverse(this.input);
+    }
+};
