@@ -1,13 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
     <title>Project: Calculator</title>
 </head>
+
 <body>
-    
+    <main>
+        <section class="container calculator-container">
+            <article class="calculator">
+                <!-- Calculator Screen -->
+                <form class="screen-wrapper">
+                    <input class="screen" type="number" id="fscreen" value="0"></input>
+                </form>
+
+                <!-- Calculator Buttons -->
+                <div class="buttons-container">
+
+                    <!-- Memory Buttons -->
+                    <button id="mc" class="btn btn-small btn-action" aria-label="Memory Clear">mc</button>
+                    <button id="mr" class="btn btn-small btn-action" aria-label="Memory Recall">mr</button>
+                    <button id="m-" class="btn btn-small btn-action" aria-label="Memory Minus">m-</button>
+                    <button id="m+" class="btn btn-small btn-action" aria-label="Memory Plus">m+</button>
+
+                    <!-- Back and Trig Buttons -->
+                    <button id="back" class="btn btn-small btn-action" aria-label="Backspace">←</button>
+                    <button id="cos" class="btn btn-small btn-action" aria-label="Cosine">cos</button>
+                    <button id="sin" class="btn btn-small btn-action" aria-label="Sine">sin</button>
+                    <button id="tan" class="btn btn-small btn-action" aria-label="Tangent">tan</button>
+
+                    <!-- Clear, Square Root, Percent and Division Buttons -->
+                    <button id="ce" class="btn btn-action" aria-label="All Clear">AC</button>
+                    <button id="sqrt" class="btn btn-action" aria-label="Square Root">&#8730;x</button>
+                    <button id="perc" class="btn btn-action" aria-label="Percent">%</button>
+                    <button id="div" class="btn btn-op" aria-label="Divide">÷</button>
+
+                    <!-- 7, 8, 9 and Multiplication Buttons -->
+                    <button id="seven" class="btn btn-inner" aria-label="7">7</button>
+                    <button id="eight" class="btn btn-inner" aria-label="8">8</button>
+                    <button id="nine" class="btn btn-inner" aria-label="9">9</button>
+                    <button id="mult" class="btn btn-op" aria-label="Multiply">×</button>
+
+                    <!-- 4, 5, 6 and Subtraction Buttons -->
+                    <button id="four" class="btn btn-inner" aria-label="4">4</button>
+                    <button id="five" class="btn btn-inner" aria-label="5">5</button>
+                    <button id="six" class="btn btn-inner" aria-label="6">6</button>
+                    <button id="sub" class="btn btn-op" aria-label="Subtract">-</button>
+
+                    <!-- 1, 2, 3 and Addition Buttons -->
+                    <button id="one" class="btn btn-inner" aria-label="1">1</button>
+                    <button id="two" class="btn btn-inner" aria-label="2">2</button>
+                    <button id="three" class="btn btn-inner" aria-label="3">3</button>
+                    <button id="add" class="btn btn-op" aria-label="Add">+</button>
+
+                    <!-- 0, Decimal, Inverse and equal Buttons -->
+                    <button id="zero" class="btn btn-inner" aria-label="0">0</button>
+                    <button id="dec" class="btn btn-inner" aria-label="Decimal">.</button>
+                    <button id="inv" class="btn btn-inner" aria-label="Invert Sign">+/-</button>
+                    <button id="equal" class="btn btn-op" aria-label="Equal">=</button>
+
+                    <!-- Pi, Exponent, Round to Cents and Round to Integer Buttons -->
+                    <button id="pi" class="btn btn-action" aria-label="Pi">π</button>
+                    <button id="exp" class="btn btn-action" aria-label="To the Power">x<sup>y</sup></button>
+                    <button id="r2" class="btn btn-action" aria-label="Round to Centrs">R2</button>
+                    <button id="r0" class="btn btn-action" aria-label="Round to Integer">R0</button>
+                </div>
+            </article>
+        </section>
+    </main>
 </body>
+
 </html>
