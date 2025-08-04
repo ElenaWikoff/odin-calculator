@@ -11,7 +11,7 @@ const defaultCalc = {
     memory: "0",
 };
 
-export class Calculator {
+export default class Calculator {
     constructor() {
         this.value = defaultCalc.value;
         this.input = defaultCalc.input;
@@ -161,5 +161,16 @@ export class Calculator {
         } else {
             this.input = this.input.slice(0, -1);
         }
+    }
+
+    // Debug methods
+
+    // Print values for this calculator
+    print() {
+        console.log("Calculator:");
+        console.log(`Value: ${this.value}`);
+        console.log(`Input: ${this.input}`);
+        console.log(`Operator: ${this.op}`);
+        console.log(`Memory: ${this.memory}`);
     }
 };
