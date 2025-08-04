@@ -44,7 +44,6 @@ export default class Calculator {
             this.value = defaultCalc.value;
             this.input = defaultCalc.input;
             this.op = defaultCalc.op;
-            this.memory = defaultCalc.memory;
         } else if (type === 'ce') {
             this.input = defaultCalc.input;
         } else {
