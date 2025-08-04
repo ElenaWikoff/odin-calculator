@@ -121,7 +121,7 @@ export default class Calculator {
     addDigit(digit) {
         if (this.input === "0" && digit !== ".") {
             this.input = digit + "";
-        } {
+        } else {
             this.input += digit;
         }
     }
