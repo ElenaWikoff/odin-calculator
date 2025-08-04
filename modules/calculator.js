@@ -70,7 +70,7 @@ export default class Calculator {
 
     // 'm-' - Subtract value from value in memory
     memMinus(value) {
-         this.memory -= this.#calc("-", this.memory, value);
+        this.memory -= this.#calc("-", this.memory, value);
     }
 
     // Evalutation methods
@@ -89,7 +89,7 @@ export default class Calculator {
     // '+'  - Set operator to '+' (add)
     add() {
         this.#setOp("+");
-        
+
     }
 
     // '-'  - Set operator to '-' (subtract)
@@ -123,7 +123,7 @@ export default class Calculator {
             this.input += digit;
         }
     }
-    
+
     // Square root input
     sqrt() {
         this.input = sqrt(this.input);
@@ -167,10 +167,6 @@ export default class Calculator {
 
     // Print values for this calculator
     print() {
-        console.log("Calculator:");
-        console.log(`Value: ${this.value}`);
-        console.log(`Input: ${this.input}`);
-        console.log(`Operator: ${this.op}`);
-        console.log(`Memory: ${this.memory}`);
+        console.log(`Calculator - Value: ${this.value}, Input: ${this.input}, Operator: ${this.op}, Memory: ${this.memory}`);
     }
 };
