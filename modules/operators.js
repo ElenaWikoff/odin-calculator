@@ -34,3 +34,18 @@ export const round = (x, dec) => {
 
 // Switch sign of x
 export const inverse = (x) => -x;
+
+// Convert degrees to radians
+const degreesToRadians = (degrees) => degrees * (Math.PI / 180);
+
+// Convert radians to degrees
+const radiansToDegrees = (radians) => radians * (180 / Math.PI);
+
+// Calculate cosine of x
+const cos = (x) => radiansToDegrees(Math.cos(degreesToRadians(x)));
+
+// Calculate sine of x
+const sin = (x) => radiansToDegrees(Math.sin(degreesToRadians(x)));
+
+// Calculate tangent of x
+const tan = (x) => radiansToDegrees(Math.tan(degreesToRadians(x)));

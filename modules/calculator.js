@@ -2,7 +2,7 @@
 Calculator class.
 */
 
-import { add, sub, mult, div, sqrt, perc, exp, pi, round, inverse } from "operators";
+import { add, sub, mult, div, sqrt, perc, exp, pi, round, inverse, cos, sin, tan } from "operators";
 
 const defaultCalc = {
     value: "0",
@@ -154,6 +154,21 @@ export default class Calculator {
     // Inverse sign of input
     inverse() {
         this.input = inverse(this.input);
+    }
+
+    // Calculate cosine of input
+    cos() {
+        this.input = cos(this.input);
+    }
+
+    // Calculate sine of input
+    sin() {
+        this.input = sin(this.input);
+    }
+
+    // Calculate tangent of input
+    tan() {
+        this.input = tan(this.input);
     }
 
     // Remove last digit added to input. Set to '0' if only single digit.
