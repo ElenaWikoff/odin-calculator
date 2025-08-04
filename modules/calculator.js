@@ -7,7 +7,7 @@ import { add, sub, mult, div, sqrt, perc, exp, pi, round, inverse } from "operat
 const defaultCalc = {
     value: "0",
     input: "0",
-    op: "+",
+    op: "",
     memory: "0",
 };
 
@@ -83,7 +83,9 @@ export default class Calculator {
 
     // '=' - Evaluate
     equal() {
-        this.#eval();
+        if (this.operator.length == 1) {
+            this.#eval();
+        }
     }
 
     // '+'  - Set operator to '+' (add)
