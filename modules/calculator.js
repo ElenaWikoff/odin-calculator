@@ -117,7 +117,11 @@ export class Calculator {
 
     // Input digit or decimal: '.' or '1,2,3,4,5,6,7,8,9,0'
     addDigit(digit) {
-        this.input += digit;
+        if (this.input === "0" && digit !== ".") {
+            this.input = digit + "";
+        } {
+            this.input += digit;
+        }
     }
     
     // Square root input
@@ -148,5 +152,14 @@ export class Calculator {
     // Inverse sign of input
     inverse() {
         this.input = inverse(this.input);
+    }
+
+    // Remove last digit added to input. Set to '0' if only single digit.
+    back() {
+        if (this.input.length === 1) {
+            this.input = "0";
+        } else {
+            this.input = this.input.slice(0, -1);
+        }
     }
 };
