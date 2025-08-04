@@ -42,10 +42,10 @@ const degreesToRadians = (degrees) => degrees * (Math.PI / 180);
 const radiansToDegrees = (radians) => radians * (180 / Math.PI);
 
 // Calculate cosine of x
-const cos = (x) => radiansToDegrees(Math.cos(degreesToRadians(x)));
+export const cos = (x) => radiansToDegrees(Math.cos(degreesToRadians(x)));
 
 // Calculate sine of x
-const sin = (x) => radiansToDegrees(Math.sin(degreesToRadians(x)));
+export const sin = (x) => radiansToDegrees(Math.sin(degreesToRadians(x)));
 
 // Calculate tangent of x
-const tan = (x) => radiansToDegrees(Math.tan(degreesToRadians(x)));
+export const tan = (x) => radiansToDegrees(Math.tan(degreesToRadians(x)));
